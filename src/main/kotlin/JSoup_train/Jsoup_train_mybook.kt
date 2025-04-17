@@ -1,7 +1,7 @@
 package org.example.JSoup_train
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
-import org.jsoup.nodes.Element
+import org.jsoup.select.Elements
 
 fun main() {
 
@@ -10,12 +10,11 @@ fun main() {
     ).get()
     println(doc.title())
 
-    val quotes: org.jsoup.select.Elements = doc.select("div.sc-2aegk7-2.bzpNIu")
+    val quotes: Elements = doc.select("article.sc-14uz67c-0.ccmjFA")
 
-    for (quote: Element in quotes) {
-        println(quote.text())
-        println()
-    }
+
+    quotes.forEach { println(it.text()) }
+
 
 }
 
