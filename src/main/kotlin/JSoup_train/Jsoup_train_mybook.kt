@@ -1,4 +1,5 @@
 package org.example.JSoup_train
+
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
@@ -10,11 +11,9 @@ fun main() {
     ).get()
     println(doc.title())
 
-    val quotes: Elements = doc.select("article.sc-14uz67c-0.ccmjFA")
-
+    val quotes: Elements = doc.select("article")
 
     quotes.forEach { println(it.text()) }
-
 
 }
 
